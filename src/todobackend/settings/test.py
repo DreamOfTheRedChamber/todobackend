@@ -22,8 +22,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': os.environ.get('MYSQL_DATABASE','todobackend'),
-        'USER': os.environ.get('MYSQL_USER','root'),
-        'PASSWORD': os.environ.get('MYSQL_PASSWORD','root'),
+        'USER': os.environ.get('MYSQL_USER','shijie'),
+        'PASSWORD': os.environ.get('MYSQL_PASSWORD',''),
         'HOST': os.environ.get('MYSQL_HOST','localhost'),
         'PORT': os.environ.get('MYSQL_PORT','3306'),
     }
