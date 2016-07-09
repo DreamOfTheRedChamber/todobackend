@@ -12,6 +12,16 @@ test:
     MYSQL_PASSWORD: password
     TEST_OUTPUT_DIR: /reports
 
+agent:
+  image: shijie/ansible
+  volumes:
+    - ../../ansible/probe.yml:/ansible/site.yml
+  links:
+    - db
+  environment:
+    PROBE_HOST: "db"
+    PROBE_PORT: "3306"
+
 builder:
   build: ../../
   dockerfile: docker/dev/Dockerfile
