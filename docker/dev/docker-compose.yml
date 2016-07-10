@@ -25,6 +25,8 @@ agent:
 builder:
   build: ../../
   dockerfile: docker/dev/Dockerfile
+  volumes:
+    - ../../target:/wheelhouse
   volumes_from:
     - cache
   entrypoint: "entrypoint.sh"
@@ -45,4 +47,5 @@ cache:
   dockerfile: docker/dev/Dockerfile
   volumes:
     - /tmp/cache:/cache
+    - /build
   entrypoint: "true"
