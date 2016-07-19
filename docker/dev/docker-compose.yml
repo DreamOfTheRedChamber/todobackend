@@ -14,19 +14,17 @@ test:
 
 agent:
   image: shijie/ansible
-  volumes:
-    - ../../ansible/probe.yml:/ansible/site.yml
   links:
     - db
   environment:
     PROBE_HOST: "db"
     PROBE_PORT: "3306"
+  command: ["probe.yml"]
+
 
 builder:
   build: ../../
   dockerfile: docker/dev/Dockerfile
-  volumes:
-    - ../../target:/wheelhouse
   volumes_from:
     - cache
   entrypoint: "entrypoint.sh"
