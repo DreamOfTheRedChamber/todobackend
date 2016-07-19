@@ -20,7 +20,7 @@ app:
     - "--die-on-term"
 
 test:
-  image: shijie/todobackend-specs
+  image: freemanzhang/todobackend-specs
   links:
     - nginx
   environment:
@@ -57,7 +57,7 @@ db:
     MYSQL_ROOT_PASSWORD: password
 
 agent:
-  image: shijie/ansible
+  image: freemanzhang/ansible
   links:
     - db
   environment:

@@ -13,7 +13,7 @@ test:
     TEST_OUTPUT_DIR: /reports
 
 agent:
-  image: shijie/ansible
+  image: freemanzhang/ansible
   links:
     - db
   environment:

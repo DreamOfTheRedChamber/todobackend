@@ -1,4 +1,4 @@
-FROM shijie/todobackend-base:latest
+FROM freemanzhang/todobackend-base:latest
 MAINTAINER Shijie
 
 # Install dev/build dependencies
