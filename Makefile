@@ -1,5 +1,5 @@
 PROJECT_NAME ?= todobackend
-ORG_NAME ?= shijie
+ORG_NAME ?= freemanzhang
 REPO_NAME ?= todobackend
 
 # Filename
@@ -19,8 +19,11 @@ CHECK := @bash -c '\
 .PHONY: test build release
 
 test:
+	${INFO} "Pulling latest images..."
+	@ docker-compose -p $(DEV_PROJECT) -f $(DEV_COMPOSE_FILE) pull
 	${INFO} "Building images"
-	@ docker-compose -p $(DEV_PROJECT) -f $(DEV_COMPOSE_FILE) build
+	@ docker-compose -p $(DEV_PROJECT) -f $(DEV_COMPOSE_FILE) build --pull test
+	@ docker-compose -p $(DEV_PROJECT) -f $(DEV_COMPOSE_FILE) build cache
 	${INFO} "Ensuring database is ready"
 	@ docker-compose -p $(DEV_PROJECT) -f $(DEV_COMPOSE_FILE) run --rm agent
 	${INFO} "Running tests"
@@ -30,6 +33,8 @@ test:
 	${INFO} "Testing complete"
 
 build:
+	${INFO} "Creating builder image..."
+	@ docker-compose -p $(DEV_PROJECT) -f $(DEV_COMPOSE_FILE) build builder
 	${INFO} "Building application artifacts..."
 	@ docker-compose -p $(DEV_PROJECT) -f $(DEV_COMPOSE_FILE) up builder
 	${CHECK} $(DEV_PROJECT) $(DEV_COMPOSE_FILE) builder
@@ -39,8 +44,13 @@ build:
 	${INFO} "Build complete"
 
 release:
+	${INFO} "Pulling latest images..."
+	@ docker-compose -p $(REL_PROJECT) -f $(REL_COMPOSE_FILE) pull test
 	${INFO} "Building images"
-	@ docker-compose -p $(REL_PROJECT) -f $(REL_COMPOSE_FILE) build
+	@ docker-compose -p $(REL_PROJECT) -f $(REL_COMPOSE_FILE) build app
+	@ docker-compose -p $(REL_PROJECT) -f $(REL_COMPOSE_FILE) build webroot
+	@ docker-compose -p $(REL_PROJECT) -f $(REL_COMPOSE_FILE) build --pull nginx
+
 	${INFO} "Ensuring database is ready"
 	@ docker-compose -p $(REL_PROJECT) -f $(REL_COMPOSE_FILE) run --rm agent
 	${INFO} "Collecting static files..."
