@@ -3,3 +3,7 @@ venv
 *.pyc
 
 *.sqlite3
+
+# Ignore build and test artifacts
+target
+reports
