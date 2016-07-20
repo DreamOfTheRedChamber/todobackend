@@ -3,8 +3,8 @@ ORG_NAME ?= freemanzhang
 REPO_NAME ?= todobackend
 
 # Filename
-DEV_COMPOSE_FILE := docker/dev/docker-compose.yml
-REL_COMPOSE_FILE := docker/release/docker-compose.yml
+DEV_COMPOSE_FILE := docker/dev/docker-compose-v2.yml
+REL_COMPOSE_FILE := docker/release/docker-compose-v2.yml
 REL_PROJECT := $(PROJECT_NAME)$(BUILD_ID)
 DEV_PROJECT := $(REL_PROJECT)dev
 
@@ -38,11 +38,12 @@ DOCKER_REGISTRY_AUTH ?=
 .PHONY: test build release clean tag buildtag login logout publish
 
 test:
+	${INFO} "Creating cache volume..."
+	@ docker volume create --name cache
 	${INFO} "Pulling latest images..."
 	@ docker-compose -p $(DEV_PROJECT) -f $(DEV_COMPOSE_FILE) pull
 	${INFO} "Building images"
 	@ docker-compose -p $(DEV_PROJECT) -f $(DEV_COMPOSE_FILE) build --pull test
-	@ docker-compose -p $(DEV_PROJECT) -f $(DEV_COMPOSE_FILE) build cache
 	${INFO} "Ensuring database is ready"
 	@ docker-compose -p $(DEV_PROJECT) -f $(DEV_COMPOSE_FILE) run --rm agent
 	${INFO} "Running tests"
