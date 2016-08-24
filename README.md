@@ -1,6 +1,16 @@
-# todobackend
-Mini-continuous delivery workflow with django, docker, jenkins
+# Overview
+Mini-continuous delivery workflow (test, build, release) for a Django-based todolist app with docker, docker-compose and makefile
 
-Please see [this blog post](http://freemanzhang.ghost.io/willow-free-responsive-and-minimalist-ghost-blog-theme/) for more detailed information.
+## Sample app
 
-Reference: Justin Menga's [Continuous Delivery Using Docker and Ansible](https://app.pluralsight.com/library/courses/docker-ansible-continuous-delivery/table-of-contents) course on Pluralsight 
+## Test stage
+
+## Build stage
+
+## Release stage
+
+## Automate the workflow
+
+## enhancement
+
+## Reference: Justin Menga's [Continuous Delivery Using Docker and Ansible](https://app.pluralsight.com/library/courses/docker-ansible-continuous-delivery/table-of-contents) course on Pluralsight 
