@@ -1,4 +1,4 @@
-# Overview
+## Overview
 Mini-continuous delivery workflow (test, build, release) for a Django-based todolist app with docker, docker-compose and makefile
 
 ## Sample app
