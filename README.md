@@ -13,4 +13,5 @@ Mini-continuous delivery workflow (test, build, release) for a Django-based todo
 
 ## enhancement
 
-## Reference: Justin Menga's [Continuous Delivery Using Docker and Ansible](https://app.pluralsight.com/library/courses/docker-ansible-continuous-delivery/table-of-contents) course on Pluralsight 
+## Reference: 
+Justin Menga's [Continuous Delivery Using Docker and Ansible](https://app.pluralsight.com/library/courses/docker-ansible-continuous-delivery/table-of-contents) course on Pluralsight 
