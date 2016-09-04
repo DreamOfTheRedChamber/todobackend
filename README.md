@@ -1,17 +1,31 @@
-## Overview
-Mini-continuous delivery workflow (test, build, release) for a Django-based todolist app with docker, docker-compose and makefile
+# Overview
+  * [docker use cases](#usecase)
+  * [sample app](#data-layout)
+  * [test stage](#queries-filters)
+  * [build stage](#aggregation)
+  * [release stage](#doc-relations)
+  * [test/build/release automation](#feedbacks)
+  * [enhance the workflow](#score-shaping)
 
-## Sample app
+## Docker use case <a id="usecase"></a>
+[use case mindmap](https://www.mindmeister.com/743413316)
 
-## Test stage
+## Sample app <a id="sample-app"></a>
+[sample app mindmap](https://www.mindmeister.com/743413420)
 
-## Build stage
+## Test stage <a id="test-stage"></a>
+[test stage mindmap](https://www.mindmeister.com/743413680)
 
-## Release stage
+## Build stage <a id="build-stage"></a>
+[build stage mindmap](https://www.mindmeister.com/743413956)
 
-## Automate the workflow
+## Release stage <a id="release-stage"></a>
+[release stage mindmap](https://www.mindmeister.com/743414101)
 
-## enhancement
+## Test/build/release automation <a id="automation"></a>
+[automation mindmap](https://www.mindmeister.com/743414298)
 
-## Reference: 
-Justin Menga's [Continuous Delivery Using Docker and Ansible](https://app.pluralsight.com/library/courses/docker-ansible-continuous-delivery/table-of-contents) course on Pluralsight 
+## Enhance the workflow <a id="enhance-the-workflow"></a>
+[enhance the workflow mindmap 1](https://www.mindmeister.com/743415074)
+
+[enhance the workflow mindmap 2](https://www.mindmeister.com/743415886)
